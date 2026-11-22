@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int changeRef(int *p)
+{
+*p=100;
+
+return *p;
+}
+int main(){
+
+int b=20;
+
+printf("Before swapping, b=%d \n",b);
+
+changeRef(&b);
+
+printf("After swapping (Call by reference), b=%d \n",b) ;
+return 0;
+}
+
