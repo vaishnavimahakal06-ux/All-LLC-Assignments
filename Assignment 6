@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int fact_rec(int num);
+
+int main() {
+    int num;
+    int result;
+
+    printf("enter the number :");
+    scanf("%d", &num);
+
+    result = fact_rec(num);
+    printf("result =%d\n", result);
+
+    return 0;
+}
+
+int fact_rec(int num) {
+    if (num == 1)
+        return 1;
+    else
+        return num * fact_rec(num - 1);
+}  
+
+#include <stdio.h>
+
+int factorial(int n) {
+    int i, fact = 1;
+    for (i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+    return fact;
+}
+
+int main() {
+    int num = 5;
+    int result;
+
+    result = factorial(num);
+    printf("factorial(%d) ", num);
+    printf("factorial of %d %d\n", num, result);
+
+    return 0;
+}
