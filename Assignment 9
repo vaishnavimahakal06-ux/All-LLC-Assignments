@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+FILE *src,*dst;
+char src_name[256],dst_name[256];
+int ch;
+printf("Enter source file name:");
+scanf("%255s",src_name);
+printf("Enter destination file name:");
+scanf("%255s",dst_name);
+src =fopen(src_name,"rb");
+if (src== NULL)
+{
+perror("Error opening source file");
+return 1;
+}
+dst=fopen(dst_name, "wb");
+if (dst == NULL){
+perror("Error opening destination file");
+fclose(src);
+return 1;
+}
+while ((ch= fgetc(src))!=EOF) 
+{fputc(ch,dst);
+}
+fclose(src);
+fclose(dst);
+printf("file copied succesfully!\n");
+return 0;
+}
